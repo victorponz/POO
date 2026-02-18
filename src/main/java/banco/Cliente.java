@@ -1,6 +1,5 @@
 package banco;
 
-import javax.swing.plaf.PanelUI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +13,19 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public Cliente(String dni, String nombre, List<Prestamo> prestamos) {
+    public Cliente(String dni, String nombre, List<Prestamo> prestamos, List<CuentaCorriente> cuentas) {
         this.dni = dni;
         this.nombre = nombre;
         this.prestamos = prestamos;
+        this.cuentas = cuentas;
     }
 
+    public Cliente(String dni, String nombre, CuentaCorriente cuenta) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.cuentas.add(cuenta);
+        cuenta.getClientes().add(this);
+    }
     public String getDni() {
         return dni;
     }

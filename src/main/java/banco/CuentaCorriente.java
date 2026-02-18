@@ -4,7 +4,7 @@ import javax.print.Doc;
 import java.util.ArrayList;
 import java.util.List;
 
-class CuentaCorriente {
+public class CuentaCorriente {
     private String n_cc;
     private double cantidad;
     private List<Cliente> clientes = new ArrayList<>();
@@ -26,7 +26,6 @@ class CuentaCorriente {
         this.sucursal = sucursal;
         this.sucursal.getCuentaCorrientes().add(this);
     }
-
 
     public String getN_cc() {
         return n_cc;
@@ -70,6 +69,7 @@ class CuentaCorriente {
 
     public void addCliente(Cliente cliente){
         this.clientes.add(cliente);
+        cliente.getCuentas().add(this);
     }
 
     @Override
