@@ -22,6 +22,7 @@ class CuentaCorriente {
         this.n_cc = n_cc;
         this.cantidad = cantidad;
         this.clientes.add(cliente);
+        cliente.getCuentas().add(this);
         this.sucursal = sucursal;
         this.sucursal.getCuentaCorrientes().add(this);
     }
@@ -65,6 +66,10 @@ class CuentaCorriente {
 
     public void setDomiciliaciones(List<Domiciliacion> domiciliaciones) {
         this.domiciliaciones = domiciliaciones;
+    }
+
+    public void addCliente(Cliente cliente){
+        this.clientes.add(cliente);
     }
 
     @Override

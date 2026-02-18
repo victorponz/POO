@@ -8,6 +8,7 @@ public class Cliente {
     private String dni;
     private String nombre;
     private List<Prestamo> prestamos = new ArrayList<>();
+    private List<CuentaCorriente> cuentas = new ArrayList<>();
     public Cliente(String dni, String nombre) {
         this.dni = dni;
         this.nombre = nombre;
@@ -46,6 +47,11 @@ public class Cliente {
     public void addPrestamo(Prestamo prestamo){
         this.prestamos.add(prestamo);
     }
+
+    public List<CuentaCorriente> getCuentas() {
+        return cuentas;
+    }
+
     @Override
     public String toString(){
         return this.nombre + " - " + this.dni;
