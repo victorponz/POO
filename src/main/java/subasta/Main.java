@@ -2,6 +2,10 @@ package subasta;
 
 public class Main {
     private static void cerrar(Subasta subasta) {
+        System.out.println("*********************");
+        System.out.println("Se cierra la subasta:");
+        System.out.println("*********************");
+
         double maximo = Integer.MIN_VALUE;
         Puja pujaActual = null;
         for (Lote lote : subasta.getLotes()) {
@@ -13,11 +17,13 @@ public class Main {
                 }
             }
             if (pujaActual != null) {
-                System.out.println(pujaActual.getCantidad());
                 System.out.printf("Adjudicado a %s por %f%n", pujaActual.getPujador().getNombre(), pujaActual.getCantidad());
+            }else{
+                System.out.println("La puja ha quedado desierta");
             }
             maximo = Integer.MIN_VALUE;
             pujaActual = null;
+            System.out.println("");
         }
     }
     public static void main(String[] args) {
@@ -33,6 +39,17 @@ public class Main {
         Puja p1 = new Puja(pepe, loteAzul, 200);
         Pujador maria = new Pujador("Maria");
         Puja m1 = new Puja(maria, loteAzul, 300);
+
+        for(Lote l: subastaPicasos.getLotes()) {
+            System.out.println(l);
+            System.out.print("Precio de salida: ");
+            System.out.println(l.getArticulos().stream().
+                    mapToDouble(Articulo::getPrecio).sum());
+            for (Articulo articulo : l.getArticulos()) {
+                System.out.println("\t" + articulo);
+            }
+            System.out.println("");
+        }
         cerrar(subastaPicasos);
     }
 }

@@ -44,4 +44,12 @@ public class Lote {
     public void setPujas(List<Puja> pujas) {
         this.pujas = pujas;
     }
+
+    @Override
+    public String toString() {
+        return "Lote{" +
+                "numeroLote=" + numeroLote +
+                ", descripcion='" + descripcion + '\'' +
+                '}';
+    }
 }
