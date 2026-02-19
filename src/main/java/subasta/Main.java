@@ -23,9 +23,9 @@ public class Main {
     public static void main(String[] args) {
 
         CasaSubasta sothebys = new CasaSubasta("Sothebys", "London");
-        Subasta suubastaPicasos = new Subasta("Picasos", sothebys, "hoy");
-        Lote loteAzul = new Lote(1, "Época azul", suubastaPicasos);
-        Lote loteRosa = new Lote(2, "Época rosa", suubastaPicasos);
+        Subasta subastaPicasos = new Subasta("Picasos", sothebys, "hoy");
+        Lote loteAzul = new Lote(1, "Época azul", subastaPicasos);
+        Lote loteRosa = new Lote(2, "Época rosa", subastaPicasos);
         Articulo cuadro1 = new Articulo("Cuadro 1", 120, loteAzul);
         Articulo cuadro2 = new Articulo("Cuadro 2", 300, loteAzul);
         Articulo cuadro3 = new Articulo("Cuadro 3", 200, loteRosa);
@@ -33,6 +33,6 @@ public class Main {
         Puja p1 = new Puja(pepe, loteAzul, 200);
         Pujador maria = new Pujador("Maria");
         Puja m1 = new Puja(maria, loteAzul, 300);
-        cerrar(suubastaPicasos);
+        cerrar(subastaPicasos);
     }
 }
